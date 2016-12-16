@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Apache Tomcat/8.0.35 - Error report</title>
+    <style type="text/css">
+    H1 {
+        font-family: Tahoma, Arial, sans-serif;
+        color: white;
+        background-color: #525D76;
+        font-size: 22px;
+    }
+    
+    H2 {
+        font-family: Tahoma, Arial, sans-serif;
+        color: white;
+        background-color: #525D76;
+        font-size: 16px;
+    }
+    
+    H3 {
+        font-family: Tahoma, Arial, sans-serif;
+        color: white;
+        background-color: #525D76;
+        font-size: 14px;
+    }
+    
+    BODY {
+        font-family: Tahoma, Arial, sans-serif;
+        color: black;
+        background-color: white;
+    }
+    
+    B {
+        font-family: Tahoma, Arial, sans-serif;
+        color: white;
+        background-color: #525D76;
+    }
+    
+    P {
+        font-family: Tahoma, Arial, sans-serif;
+        background: white;
+        color: black;
+        font-size: 12px;
+    }
+    
+    A {
+        color: black;
+    }
+    
+    A.name {
+        color: black;
+    }
+    
+    .line {
+        height: 1px;
+        background-color: #525D76;
+        border: none;
+    }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+	    function formatDate(time_stamp) {
+            var now = new Date(time_stamp);
+	        var year = now.getFullYear();
+	        var month = now.getMonth() + 1;
+	        var date = now.getDate();
+	        var hour = now.getHours();
+	        var minute = now.getMinutes();
+	        var second = now.getSeconds();
+	        return year + "-" + month + "-" + date+"  "+hour+":"+minute+":"+second;
+	    }
+	    var time_stamp = 1480494657000;
+        
+	    console.log(formatDate(time_stamp));//2016-11-30  16:30:57
+
+        //获取当前时间戳
+        // var timestamp = Date.parse(new Date());
+        // var timestamp = (new Date()).valueOf();
+        // var timestamp=new Date().getTime();
+        var timestamp = parseInt(new Date().getTime()/1000);    // 当前时间戳
+        document.write(timestamp);//1481853962
+        console.log(formatDate(timestamp));//1970-1-18  11:37:33
+
+
+        var date = '2015-03-05 17:59:00.0';
+        date = date.substring(0,19);    
+        date = date.replace(/-/g,'/'); 
+        var timestamp1 = new Date(date).getTime();
+        console.log(timestamp1);// 1425549540000
+        console.log(formatDate(timestamp1));//2015-3-5  17:59:0
+    </script>
+<script>     
+    function getLocalTime(nS) {     
+       return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
+    }     
+    console.log(getLocalTime(1293072805)); //2010/12/23 上午10:53
+
+</script>
+</body>
+
+</html>
